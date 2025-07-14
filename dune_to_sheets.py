@@ -7,6 +7,7 @@ import httpx
 from typing import Optional, Dict, Any, List
 from dataclasses import dataclass
 from dotenv import load_dotenv
+import json
 
 # Google Sheets functionality removed - focusing on CSV export
 
@@ -160,16 +161,46 @@ def main():
     # Initialize client
     client = DuneToCSV(DUNE_API_KEY)
     
-    # Example usage
-    query_ids = [5455942, 5462213, 5462219, 5462222]
+    # Read morpho vaults data and extract query IDs
+    try:
+        with open('morpho_vaults.json', 'r') as f:
+            vaults = json.load(f)
+    except FileNotFoundError:
+        raise Exception("morpho_vaults.json not found")
+    except json.JSONDecodeError:
+        raise Exception("Invalid JSON in morpho_vaults.json")
+    
+    # Extract query IDs from dune_request field
+    query_ids = []
+    vault_info = {}  # Store vault info for each query ID
+    for vault in vaults:
+        dune_request = vault.get('dune_request', '')
+        if dune_request and 'queries/' in dune_request:
+            try:
+                # Extract the query ID after 'queries/' and before any '?' or end of string
+                query_id = int(dune_request.split('queries/')[1].split('?')[0])
+                query_ids.append(query_id)
+                vault_info[query_id] = vault
+                print(f"Extracted query ID {query_id} from {vault['symbol']}")
+            except (ValueError, IndexError):
+                print(f"Could not extract query ID from {vault['symbol']}: {dune_request}")
+    
+    if not query_ids:
+        raise Exception("No valid query IDs found in morpho_vaults.json")
     
     try:
-        print("Fetching data and saving to CSV files...")
+        print(f"Fetching data for {len(query_ids)} queries...")
         for i, query_id in enumerate(query_ids, 1):
-            filename = f"morpho_vault_data_{query_id}.csv"
-            print(f"Processing query {i}/{len(query_ids)}: {query_id}")
-            result = client.query_to_csv(query_id, filename=filename)
-            print(f"Saved {result['rows_saved']} rows to {result['filepath']}")
+            vault = vault_info[query_id]
+            filename = f"{vault['project']}_{vault['chain']}_{vault['symbol']}.csv"
+            print(f"Processing query {i}/{len(query_ids)}: {query_id} ({vault['symbol']})")
+            
+            try:
+                result = client.query_to_csv(query_id, filename=filename)
+                print(f"Saved {result['rows_saved']} rows to {result['filepath']}")
+            except Exception as e:
+                print(f"No data returned for {vault['symbol']} (query {query_id}): {e}")
+                continue
             
     except Exception as e:
         print(f"Error: {e}")
