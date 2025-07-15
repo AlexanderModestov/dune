@@ -104,7 +104,7 @@ class CSVExporter:
         return filepath
 
 class DuneToCSV:
-    def __init__(self, dune_api_key: str, output_dir: str = "output"):
+    def __init__(self, dune_api_key: str, output_dir: str = "data/dune"):
         self.dune_client = DuneClient(DuneConfig(api_key=dune_api_key))
         self.csv_exporter = CSVExporter(output_dir)
     

@@ -1,5 +1,77 @@
 [
   {
+    "pool_id": "2ed280bc-f78d-44b1-beca-cd6c2d118f6e",
+    "chain": "Polygon",
+    "project": "merkl",
+    "symbol": "USDC-COMPUSDC",
+    "dune_request": "",
+    "contract_address": "0x39aa39c021dfbae8fac545936693ac917d5e7563"
+  },
+  {
+    "pool_id": "fdfd4a07-e933-4f2a-90f8-f756e8e7e167",
+    "chain": "Base",
+    "project": "morpho-blue",
+    "symbol": "APRUSDC",
+    "dune_request": "https://dune.com/queries/5473333",
+    "contract_address": "0x214B47C50057eFaa7adc1B1C2608C3751Cd77D78"
+  },
+  {
+    "pool_id": "49af9322-5f77-42c3-8df5-df86fd6838eb",
+    "chain": "Base",
+    "project": "morpho-blue",
+    "symbol": "IONICUSDC",
+    "dune_request": "https://dune.com/queries/5473353",
+    "contract_address": "0xc53edeafb6d502daec5a7015d67936cea0cd0f52"
+  },
+  {
+    "pool_id": "1643c124-f047-4fc5-9642-d6fa91875184",
+    "chain": "Base",
+    "project": "morpho-blue",
+    "symbol": "MWUSDC",
+    "dune_request": "https://dune.com/queries/5473367",
+    "contract_address": "0xc1256ae5ff1cf2719d4937adb3bbccab2e00a2ca"
+  },
+  {
+    "pool_id": "7311a4f0-396d-4db1-82b5-6ab33337716b",
+    "chain": "Base",
+    "project": "morpho-blue",
+    "symbol": "RE7USDC",
+    "dune_request": "https://dune.com/queries/5473371",
+    "contract_address": "0x60d715515d4411f7f43e4206dc5d4a3677f0ec78"
+  },
+  {
+    "pool_id": "642ad1f2-4839-4a66-a8ce-0e2dc72516d0",
+    "chain": "Base",
+    "project": "morpho-blue",
+    "symbol": "BBQUSDC",
+    "dune_request": "https://dune.com/queries/5473379",
+    "contract_address": "0xbeefa74640a5f7c28966cba82466eed5609444e0"
+  },
+  {
+    "pool_id": "3ad60cb7-74db-448b-9e3b-e6af576e697f",
+    "chain": "Base",
+    "project": "morpho-blue",
+    "symbol": "STEAKUSDC",
+    "dune_request": "https://dune.com/queries/5473382",
+    "contract_address": "0xBEEF01735c132Ada46AA9aA4c54623cAA92A64CB"
+  },
+  {
+    "pool_id": "ab12cc0f-4296-488e-9ad9-4014d1fadf13",
+    "chain": "Ethereum",
+    "project": "morpho-blue",
+    "symbol": "USDCRWA",
+    "dune_request": "https://dune.com/queries/5473243",
+    "contract_address": "0xC6A7C11fecB203C46F8ACb393274bbF789808798"
+  },
+  {
+    "pool_id": "d3b3bbb7-2e4a-4d63-b1c6-2e71b1fc33df",
+    "chain": "Ethereum",
+    "project": "morpho-blue",
+    "symbol": "DUPLICATEDKEY.USDC",
+    "dune_request": "",
+    "contract_address": "0x2DDc54062b7B1B5Ba2E8E43797A91fECf874f310"
+  },
+  {
     "pool_id": "1350803f-262c-4c7e-b134-d2f693c7a7c8",
     "chain": "Ethereum",
     "project": "morpho-blue",
@@ -85,38 +157,6 @@
     "project": "morpho-blue",
     "symbol": "HYPERUSDC",
     "dune_request": "https://dune.com/queries/5469419",
-    "contract_address": "Not found"
-  },
-  {
-    "pool_id": "6fcfa6f7-861f-4d50-b594-190f4be37abf",
-    "chain": "Ethereum",
-    "project": "morpho-blue",
-    "symbol": "BBQUSDC",
-    "dune_request": "",
-    "contract_address": "Not found"
-  },
-  {
-    "pool_id": "d1bee60c-18a8-469f-b8cc-e72a32d8b861",
-    "chain": "Ethereum",
-    "project": "morpho-blue",
-    "symbol": "USDCDOJO",
-    "dune_request": "https://dune.com/queries/5469441",
-    "contract_address": "Not found"
-  },
-  {
-    "pool_id": "5f25e831-d41f-4e34-97ac-5325f44ba4e2",
-    "chain": "Ethereum",
-    "project": "morpho-blue",
-    "symbol": "BBQUSDT",
-    "dune_request": "",
-    "contract_address": "Not found"
-  },
-  {
-    "pool_id": "b94eb474-2c96-404b-a822-0ed3fadd0148",
-    "chain": "Ethereum",
-    "project": "morpho-blue",
-    "symbol": "FUSDC",
-    "dune_request": "https://dune.com/queries/5469499",
-    "contract_address": "Not found"
+    "contract_address": "0x0135e907ca8ccf299f2148e4b3e48439cd8bfb3d"
   }
 ] 
